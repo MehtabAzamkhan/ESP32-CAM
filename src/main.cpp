@@ -11,18 +11,18 @@
 #include <addons/TokenHelper.h>
 
 //Replace with your network credentials
-const char* ssid = "Shoaib";
-const char* password = "A0123456789";
+const char* ssid = "robeel047";
+const char* password = "33445566";
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyAEQMr1i3Dd0ZFbl19vmUg9cVS0X1KuEVM"
+#define API_KEY "AIzaSyBzFYZ8pC3jbfa9VVy6ZBLIti1Os0dJ0k8"
 
 // Insert Authorized Email and Corresponding Password
 #define USER_EMAIL "kaka@gmail.com"
-#define USER_PASSWORD "bwfx34"
+#define USER_PASSWORD "kaka1234"
 
 // Insert Firebase storage bucket ID e.g bucket-name.appspot.com
-#define STORAGE_BUCKET_ID "hello-52c2a.appspot.com"
+#define STORAGE_BUCKET_ID "final-98305.appspot.com"
 
 // Photo File Name to save in SPIFFS
 #define FILE_PHOTO "/data/photo.jpg"
@@ -96,12 +96,13 @@ void capturePhotoSaveSpiffs( void ) {
     // check if file has been correctly saved in SPIFFS
     ok = checkPhoto(SPIFFS);
   } while ( !ok );
+  taskCompleted = false;
 }
 
 void initWiFi() {
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
+    delay(3000);
     Serial.println("Connecting to WiFi...");
   }
 }
@@ -210,7 +211,7 @@ void loop() {
 
       //MIME type should be valid to avoid the download problem.
       //The file systems for flash and SD/SDMMC can be changed in FirebaseFS.h.
-      if (Firebase.Storage.upload(&fbdo, STORAGE_BUCKET_ID /* Firebase Storage bucket id */, FILE_PHOTO /* path to local file */, mem_storage_type_flash /* memory storage type, mem_storage_type_flash and mem_storage_type_sd */, FILE_PHOTO /* path of remote file stored in the bucket */, "image/jpeg" /* mime type */)) {
+      if (Firebase.Storage.upload(&fbdo, STORAGE_BUCKET_ID /* Firebase Storage bucket id /, FILE_PHOTO / path to local file /, mem_storage_type_flash / memory storage type, mem_storage_type_flash and mem_storage_type_sd /, FILE_PHOTO / path of remote file stored in the bucket /, "image/jpeg" / mime type */)) {
         Serial.printf("\nDownload URL: %s\n", fbdo.downloadURL().c_str());
       }
       else {
