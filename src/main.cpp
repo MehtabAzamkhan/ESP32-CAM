@@ -11,18 +11,18 @@
 #include <addons/TokenHelper.h>
 
 //Replace with your network credentials
-const char* ssid = "robeel047";
-const char* password = "33445566";
+const char* ssid = "******";
+const char* password = "*******";
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyBzFYZ8pC3jbfa9VVy6ZBLIti1Os0dJ0k8"
+#define API_KEY "**********"
 
 // Insert Authorized Email and Corresponding Password
-#define USER_EMAIL "kaka@gmail.com"
-#define USER_PASSWORD "kaka1234"
+#define USER_EMAIL "*****"
+#define USER_PASSWORD "*****"
 
 // Insert Firebase storage bucket ID e.g bucket-name.appspot.com
-#define STORAGE_BUCKET_ID "final-98305.appspot.com"
+#define STORAGE_BUCKET_ID "*******"
 
 // Photo File Name to save in SPIFFS
 #define FILE_PHOTO "/data/photo.jpg"
